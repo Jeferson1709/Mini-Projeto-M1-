@@ -33,9 +33,9 @@ function menu() {
         rl.question("Nome: ", nome =>
           rl.question("Idade: ", idade =>
             rl.question("Notas (separadas por vírgula): ", notas => {
-              console.log(typeof notas)
+        
               cadastrarEstudante(nome, parseInt(idade), notas.split(",").map(nota => Number(nota)))
-              console.log(typeof notas)
+        
               menu();
             })
           )
