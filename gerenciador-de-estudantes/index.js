@@ -13,18 +13,18 @@ const rl = readline.createInterface({
 //Menu principal
 function menu() {
   console.log(`
-======== GERENCIADOR DE ESTUDANTES 📚 ========
+======== GERENCIADOR DE ESTUDANTES ========
 
-1️⃣ - Cadastrar Estudante
-2️⃣ - Listar Estudantes
-3️⃣ - Buscar Estudante
-4️⃣ - Mostrar Médias Individuais
-5️⃣ - Mostrar Média Geral da Turma
-6️⃣ - Estudante com Maior Média
-7️⃣ - Relatórios de Situação
-8️⃣ - Editar Estudante
-9️⃣ - Remover Estudante
-0️⃣ - Sair
+1️- Cadastrar Estudante
+2️- Listar Estudantes
+3️ - Buscar Estudante
+4️ - Mostrar Médias Individuais
+5️ - Mostrar Média Geral da Turma
+6️ - Estudante com Maior Média
+7️ - Relatórios de Situação
+8️ - Editar Estudante
+9️ - Remover Estudante
+0️ - Sair
 `);
 
   rl.question("Escolha uma opção: ", (op) => {
@@ -56,15 +56,15 @@ function menu() {
         menu();
         break;
       case "5":
-        console.log(`📊 Média da turma: ${mediaGeral().toFixed(1)}`);
+        console.log(`Média da turma: ${mediaGeral().toFixed(1)}`);
         menu();
         break;
       case "6":
         const melhor = estudanteMaiorMedia();
         if (melhor) {
-          console.log(`🏆 Estudante com maior média: ${melhor.nome} - Média: ${calcularMedia(melhor.notas).toFixed(1)}`);
+          console.log(`Estudante com maior média: ${melhor.nome} - Média: ${calcularMedia(melhor.notas).toFixed(1)}`);
         } else {
-          console.log("📭 Nenhum estudante cadastrado.");
+          console.log("Nenhum estudante cadastrado.");
         }
         menu();
         break;
@@ -97,11 +97,11 @@ function menu() {
         });
         break;
       case "0":
-        console.log("👋 Saindo... Até mais!");
+        console.log("Saindo... Até mais!");
         rl.close();
         break;
       default:
-        console.log("❌ Opção inválida!");
+        console.log("Opção inválida!");
         menu();
     }
   });

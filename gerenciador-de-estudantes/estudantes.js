@@ -14,18 +14,18 @@ export function cadastrarEstudante(nome, idade, notas) {
     return;
   }
   estudantes.push({ nome, idade, notas });
-  console.log(`✅ «${nome} cadastrado(a) com sucesso!»  `);
+  console.log(`${nome} cadastrado(a) com sucesso!»  `);
 }
 
 /** Função para listar todos os estudantes */
 export function listarEstudantes() {
   if (estudantes.length === 0) {
-    console.log("📭 Nenhum estudante cadastrado.");
+    console.log("Nenhum estudante cadastrado.");
     return;
   }
-  console.log("\n📋 Lista de Estudantes:");
+  console.log("\nLista de Estudantes:");
   estudantes.forEach((estudante, indice) => {
-    console.log(`\n${indice + 1}️⃣ ${estudante.nome} - Idade: ${estudante.idade} - Notas: ${estudante.notas.join(", ")}`);
+    console.log(`\n${indice + 1} ${estudante.nome} - Idade: ${estudante.idade} - Notas: ${estudante.notas.join(", ")}`);
   });
 }
 
@@ -36,18 +36,18 @@ export function buscarEstudante(nomeBusca) {
   );
 
   if (resultado.length === 0) {
-    console.log("🔍 Nenhum estudante encontrado.");
+    console.log("Nenhum estudante encontrado.");
     return;
   }
 
-  console.log("\n🔍 Estudantes encontrados:");
+  console.log("\nEstudantes encontrados:");
   resultado.forEach((estudante, item) => {
     const media = estudante.notas.length > 0 
       ? (estudante.notas.reduce((acumulador, nota) => acumulador + nota, 0) / estudante.notas.length).toFixed(2) 
       : "N/A";
     
     console.log(
-      `${item + 1}. 📌 ${estudante.nome} | Idade: ${estudante.idade} | Notas: ${estudante.notas.join(", ")} | Média: ${media}`
+      `${item + 1}. ${estudante.nome} | Idade: ${estudante.idade} | Notas: ${estudante.notas.join(", ")} | Média: ${media}`
     );
   });
 }
@@ -58,7 +58,7 @@ export function editarEstudante(nomeBusca, novoNome, novaIdade, novasNotas) {
   const index = estudantes.findIndex(estudante => estudante.nome.toLowerCase() === nomeBusca.toLowerCase());
 
   if (index === -1) {
-    console.log("🔍 Estudante não encontrado.");
+    console.log("Estudante não encontrado.");
     return;
   }
 
@@ -66,16 +66,16 @@ export function editarEstudante(nomeBusca, novoNome, novaIdade, novasNotas) {
   if (novaIdade) estudantes[index].idade = novaIdade;
   if (novasNotas) estudantes[index].notas = novasNotas;
 
-  console.log("✅ Estudante atualizado com sucesso!");
+  console.log("Estudante atualizado com sucesso!");
 }
 
 /** Remover estudante */
 export function removerEstudante(nomeBusca) {
   const index = estudantes.findIndex(estudante => estudante.nome.toLowerCase() === nomeBusca.toLowerCase());
   if (index === -1) {
-    console.log("\n🔍 Estudante não encontrado.");
+    console.log("\nEstudante não encontrado.");
     return;
   }
   const removido = estudantes.splice(index, 1)[0];
-  console.log(`🗑️ Estudante ${removido.nome} removido com sucesso!`);
+  console.log(`Estudante ${removido.nome} removido com sucesso!`);
 }

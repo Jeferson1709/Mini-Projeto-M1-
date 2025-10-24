@@ -7,11 +7,11 @@ export function calcularMedia(notas) {
 /** Mostrar médias individuais */
 export function mediasIndividuais() {
   if (estudantes.length === 0) {
-    console.log("📭 Nenhum estudante cadastrado.");
+    console.log("Nenhum estudante cadastrado.");
     return;
   }
 
-  console.log("\n🧮 Médias Individuais:");
+  console.log("\nMédias Individuais:");
   estudantes
     .map(estudante => ({
       nome: estudante.nome,
@@ -20,7 +20,7 @@ export function mediasIndividuais() {
     .sort((a, b) => b.media - a.media) 
     .forEach((estudante, indice) => {
       console.log(
-        `🏅 ${indice + 1}º ${estudante.nome} → Média = ${estudante.media.toFixed(1)}`
+        `${indice + 1}º ${estudante.nome} -> Média = ${estudante.media.toFixed(1)}`
       );
     });
 }
@@ -43,7 +43,7 @@ export function estudanteMaiorMedia() {
 /** Relatórios de aprovação */
 export function relatorios() {
   if (estudantes.length === 0) {
-    console.log("📭 Nenhum estudante cadastrado.");
+    console.log("Nenhum estudante cadastrado.");
     return;
   }
 
@@ -65,9 +65,9 @@ export function relatorios() {
   });
 
   // Saída formatada
-  console.log("\n📊 Relatórios:");
-  console.log("✅ Aprovados:", aprovados.join(", ") || "Nenhum");
-  console.log("⚠️ Recuperação:", recuperacao.join(", ") || "Nenhum");
-  console.log("❌ Reprovados:", reprovados.join(", ") || "Nenhum");
+  console.log("\nRelatórios:");
+  console.log("Aprovados:", aprovados.join(", ") || "Nenhum");
+  console.log("Recuperação:", recuperacao.join(", ") || "Nenhum");
+  console.log("Reprovados:", reprovados.join(", ") || "Nenhum");
 }
 
